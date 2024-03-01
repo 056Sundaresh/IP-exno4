@@ -1,38 +1,3 @@
-// 5. Create a form that gets input of several lines of text and a search character.On clicking
-// the search button in the client form invoke suitable script function to display the number
-// of occurrences of the character in the text using suitable string methods.
-
-function count(){
-    var c = 0;
-    let TextArea = document.getElementById('area1').value
-    let SearchText = document.getElementById('searchkey').value
-    let TextArray = TextArea.split(" ")
-    TextArray.forEach(word => {
-        if(word.toLowerCase() === SearchText.toLowerCase()){
-            c=c+1;
-        }
-    });
-    let h3 = document.createElement('h3');
-    h3.textContent = "Total counts of "+SearchText+" is "+c;
-    let counts = document.getElementById('counts')
-    counts.appendChild(h3);
-}
-
-
-// 4. Write a JavaScript program to change the background color by generating a random
-// hexadecimal color code.
-let Changeclr = document.getElementById('Changeclr');
-Changeclr.addEventListener('click', function () {
-    var colour = "#";
-    var hexcode = "0123456789ABCDEF";
-    for (let i = 0; i <= 5; i++) {
-        let randomInRange = Math.floor(Math.random() * 16);
-        colour += hexcode[randomInRange];
-    }
-    console.log(colour)
-    document.body.style.backgroundColor = colour;
-});
-
 // 1.Write a java script function that print all combination of strings
 let strings = ['a', 'b', 'c'];
 let allCombinations = printCombinations(strings);
@@ -82,3 +47,39 @@ function addComplexNumbers(complex1, complex2) {
     let imaginaryPart = complex1.imaginary + complex2.imaginary;
     return { real: realPart, imaginary: imaginaryPart };
 }
+
+
+// 4. Write a JavaScript program to change the background color by generating a random
+// hexadecimal color code.
+let Changeclr = document.getElementById('Changeclr');
+Changeclr.addEventListener('click', function () {
+    var colour = "#";
+    var hexcode = "0123456789ABCDEF";
+    for (let i = 0; i <= 5; i++) {
+        let randomInRange = Math.floor(Math.random() * 16);
+        colour += hexcode[randomInRange];
+    }
+    console.log(colour)
+    document.body.style.backgroundColor = colour;
+});
+
+// 5. Create a form that gets input of several lines of text and a search character.On clicking
+// the search button in the client form invoke suitable script function to display the number
+// of occurrences of the character in the text using suitable string methods.
+
+function count(){
+    var c = 0;
+    let TextArea = document.getElementById('area1').value
+    let SearchText = document.getElementById('searchkey').value
+    let TextArray = TextArea.split(" ")
+    TextArray.forEach(word => {
+        if(word.toLowerCase() === SearchText.toLowerCase()){
+            c=c+1;
+        }
+    });
+    let h3 = document.createElement('h3');
+    h3.textContent = "Total counts of "+SearchText+" is "+c;
+    let counts = document.getElementById('counts')
+    counts.appendChild(h3);
+         }
+         
